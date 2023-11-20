@@ -46,7 +46,13 @@
 
 {{ end }}
 
-<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+<h2>拠点一覧</h2>
+{{ range site.Data.locations }}
+  <h3>{{ .name }}</h3>
+  <p><a href="{{.url}}">{{ .url }}</a></p>
+{{ end }}
+
+<!--section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
   {{ if gt .Weight 0 }}
   <span
     class="mb-2 ml-px inline-block text-[0.8rem] font-medium uppercase tracking-wider text-[#ff3b2d] opacity-70"
@@ -58,7 +64,7 @@
     >{{ .Date | time.Format ":date_medium" }}</time
   >
   <a class="absolute inset-0 text-[0]" href="{{ .Permalink }}">{{ .Title }}</a>
-</section>
+</section-->
 {{ end }}
 
 <!-- Main Nav -->
